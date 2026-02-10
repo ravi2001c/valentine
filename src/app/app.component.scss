@@ -1,0 +1,46 @@
+.container {
+  background: pink;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+h1 {
+  padding-top: 100px;
+  color: #b30059;
+}
+
+button {
+  padding: 15px 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.yes {
+  background: white; /* 🤍 white background */
+  color: #ff3366; /* ❤️ red heart/text */
+  border: 2px solid #ff3366; /* thoda classy look */
+  left: 40%;
+  top: 60%;
+}
+
+.no {
+  background: white;
+  color: #ff3366;
+  left: 55%;
+  top: 60%;
+}
+
+.success {
+  background: pink;
+  height: 100vh;
+  text-align: center;
+  padding-top: 200px;
+  color: #b30059;
+}
+
+
