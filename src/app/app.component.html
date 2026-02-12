@@ -1,27 +1,48 @@
-<div class="container" *ngIf="!accepted">
+<div
+  class="container"
+  *ngIf="!accepted"
+  #containerRef
+  (mousemove)="detectMouse($event)"
+>
+  <!-- 💖 Floating Hearts -->
+  <div class="hearts">
+    <span *ngFor="let h of heartArray"></span>
+  </div>
+
   <h1>
     You deserve me 💖🌸 <br />
     Congratulations, I like your choice ❤️
   </h1>
 
-  <button class="yes" (click)="accept()">Obviously Yes❤️🔥</button>
+  <div class="btn-group">
+    <button class="yes" (click)="accept()">Obviously Yes ❤️🔥</button>
 
-  <button
-    class="no"
-    [ngStyle]="{ left: noX + 'px', top: noY + 'px' }"
-    (mouseenter)="moveNo()"
-  >
-    No 😒
-  </button>
+    <!-- No button now relative to Yes -->
+    <button
+      class="no"
+      [ngStyle]="{ transform: 'translate(' + noX + 'px,' + noY + 'px)' }"
+    >
+      No 😒
+    </button>
+  </div>
 </div>
 
 <div class="success" *ngIf="accepted">
-  <!-- 💥 CRACKERS BURST -->
+  <div class="ring" *ngIf="accepted">💍</div>
+  <!-- 🎆 Confetti -->
+  <canvas #confettiCanvas></canvas>
+
+  <!-- 💥 Crackers -->
   <div class="burst">
     <span *ngFor="let b of burstArray"></span>
   </div>
 
-  <h1>Yayyy 💖</h1>
-  <p>I knew it 😍</p>
+  <h1>✨💌 Usne "Haan" Keh Di 💌✨</h1>
+
+  <p>Teri haan ne meri duniya saja di, ek muskaan ne kismat bana di ❤️</p>
+
+  <p>Ab har subah tera naam hoga, aur har shaam tera intezaar 💞</p>
   <p>Happy Valentine’s Day 💌</p>
 </div>
+
+<audio #bgMusic src="song/music.mp3" loop></audio>
